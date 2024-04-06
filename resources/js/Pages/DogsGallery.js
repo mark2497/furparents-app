@@ -19,7 +19,7 @@ export default function DogsGallery(props) {
             <p className='text-center text-green-500'>{props.status}</p>
             <DogSelectionProvider>
                 <div className="py-12 relative">
-                    <div className='absolute top-2 right-10'>
+                    <div className='absolute top-2 right-[4%]'>
                         <SelectionControls/>
                     </div>
                     <DogTiles></DogTiles>

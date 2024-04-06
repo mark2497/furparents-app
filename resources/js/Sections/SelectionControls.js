@@ -22,7 +22,7 @@ export default function SelectionControls() {
     return (
         <div className='flex flex-row gap-5 align-middle'>
             <Button type='button' className='bg-blue-500 text-white active:bg-blue-300 hover:bg-blue-300' disabled={processing && Object.keys(selected)} onClick={(e)=>submitData(e)}>Save</Button>
-            <Button type='button' className='bg-transparent text-red-500 active:text-red-300 hover:text-red-300'  onClick={(e) => clear()}>Clear</Button>
+            <Button type='button' className='bg-transparent text-black active:text-red-300 hover:text-red-300'  onClick={(e) => clear()}>Clear</Button>
         </div>
     )
 }

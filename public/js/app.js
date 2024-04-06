@@ -3569,7 +3569,7 @@ function DogsGallery(props) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "py-12 relative",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "absolute top-2 right-10",
+          className: "absolute top-2 right-[4%]",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Sections_SelectionControls__WEBPACK_IMPORTED_MODULE_5__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Sections_DogsTiles__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
       })
@@ -3695,7 +3695,7 @@ function SelectionControls() {
       children: "Save"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
       type: "button",
-      className: "bg-transparent text-red-500 active:text-red-300 hover:text-red-300",
+      className: "bg-transparent text-black active:text-red-300 hover:text-red-300",
       onClick: function onClick(e) {
         return clear();
       },
