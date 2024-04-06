@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dogs', fn() => Inertia::render('DogsGallery'))->name('dogs-gallery');
-    Route::get('/doglovers', fn() => Inertia::render('DogLovers'))->name('doglovers');
+    Route::get('/doglovers', [UserController::class, 'getFurParents'])->name('doglovers');
     Route::get('/getUserSelected', [UserController::class, 'getPreferredBreed']);
     Route::post('/setPreferredBreed', [UserController::class, 'setPreferredBreed']);
 });

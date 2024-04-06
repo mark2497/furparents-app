@@ -16,7 +16,7 @@ export default function Authenticated({ auth, header, children }) {
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
                                 <Link href="/">
-                                    <NavLogo className="block h-4 w-auto text-gray-500" />
+                                    <NavLogo className="block h-4 w-auto text-gray-500"/>
                                 </Link>
                             </div>
 

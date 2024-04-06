@@ -13,10 +13,6 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    public function preferredBreed() {
-        return $this->hasMany(PreferredBreed::class);
-    }
-
     /**
      * The attributes that are mass assignable.
      *
@@ -46,4 +42,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $appends = ['favorite_breeds'];
+
+    public function preferredBreed() {
+        return $this->hasMany(PreferredBreed::class);
+    }
+
+    public function getFavoriteBreedsAttribute() {
+        $favoriteBreeds = $this->preferredBreed->pluck('breed')->toArray();
+        return implode(', ', $favoriteBreeds);
+    }
 }

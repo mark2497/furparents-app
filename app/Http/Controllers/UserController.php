@@ -37,4 +37,9 @@ class UserController extends Controller
         }
         
     }
+
+    public function getFurParents() {
+        $users = User::get()->toArray();
+        return Inertia::render('DogLovers', ['furparents' => $users]);
+    }
 }
