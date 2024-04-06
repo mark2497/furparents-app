@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use App\Http\Requests\AccountDetailsRequest;
 
 class UserController extends Controller
 {
@@ -41,5 +42,17 @@ class UserController extends Controller
     public function getFurParents() {
         $users = User::get()->toArray();
         return Inertia::render('DogLovers', ['furparents' => $users]);
+    }
+
+    public function updateDetails(AccountDetailsRequest $request) {
+        $user = Auth::user();
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $isSaved = $user->save();
+        if ($isSaved) {
+            return Inertia::render('DogsGallery', [
+                'status' => 'Account details successfully updated',
+            ]);
+        }
     }
 }
